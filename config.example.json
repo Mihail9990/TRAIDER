@@ -1,0 +1,17 @@
+{
+  "database_path": "data/trader.sqlite3",
+  "entry_candle_range_threshold": "4",
+  "entry_candle_timeframe": "1m",
+  "log_backup_count": 3,
+  "log_level": "INFO",
+  "log_max_bytes": 1000000,
+  "log_path": "logs/trader.log",
+  "max_scenario": 9,
+  "mode": "SIMULATOR",
+  "position_size": "1",
+  "stop_after_current_cycle": false,
+  "stop_distance": "1",
+  "symbol": "GOLD",
+  "target_profit": "0.30",
+  "telegram_enabled": false
+}
