@@ -13,18 +13,21 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import urllib.parse
 import urllib.request
 import zipfile
 from pathlib import Path, PurePosixPath
 
 
 DEFAULT_REPOSITORY = "Mihail9990/TRAIDER"
-DEFAULT_REF = "codex/-capital.com"
+# Install the canonical, merged release instead of a stale development branch.
+DEFAULT_REF = "main"
 
 
 def archive_url(repository: str, ref: str) -> str:
     """Return the GitHub archive URL for a repository and ref."""
-    return f"https://github.com/{repository}/archive/refs/heads/{ref}.zip"
+    encoded_ref = urllib.parse.quote(ref, safe="/")
+    return f"https://github.com/{repository}/archive/refs/heads/{encoded_ref}.zip"
 
 
 def _safe_extract(archive: Path, destination: Path) -> Path:
