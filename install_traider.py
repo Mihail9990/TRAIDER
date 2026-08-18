@@ -20,7 +20,7 @@ from pathlib import Path, PurePosixPath
 
 
 DEFAULT_REPOSITORY = "Mihail9990/TRAIDER"
-DEFAULT_REF = "codex/-capital.com"
+DEFAULT_REF = "main"
 
 
 def archive_url(repository: str, ref: str) -> str:
