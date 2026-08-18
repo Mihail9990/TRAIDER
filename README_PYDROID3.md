@@ -171,19 +171,25 @@ Python standard library, never stores credentials in `config.json`, never
 retries a trading write, and waits for `GET /confirms/{dealReference}` before a
 trade is considered confirmed.
 
-Set secrets in the Terminal session (replace every example value):
+Create the private credentials directory and copy the versioned template:
 
 ```sh
-export CAPITAL_API_KEY='YOUR_API_KEY'
-export CAPITAL_IDENTIFIER='YOUR_LOGIN'
-export CAPITAL_API_PASSWORD='YOUR_API_PASSWORD'
-export CAPITAL_EPIC='BROKER_EPIC_RETURNED_BY_MARKET_SEARCH'
+mkdir -p "$HOME/.traider"
+cp secrets.example.json "$HOME/.traider/secrets.json"
+chmod 600 "$HOME/.traider/secrets.json"
+```
+
+Edit only `$HOME/.traider/secrets.json` in Pydroid and replace every
+placeholder. The file stores Capital.com and Telegram credentials outside the
+replaceable project checkout. Never commit it or include it in screenshots.
+Then run:
+
+```sh
 python run_capital_demo_preflight.py
 ```
 
-Pydroid installations whose shell does not retain `export` values can launch
-the script from a small local wrapper that sets `os.environ` before importing
-it. Never commit that wrapper or send its contents in screenshots.
+Set `TRAIDER_SECRETS_FILE` only when a different local path is needed. The
+default is `$HOME/.traider/secrets.json`.
 
 This preflight performs only authentication, `hedgingMode` validation, and a
 market-details quote read. It deliberately sends no position or working-order

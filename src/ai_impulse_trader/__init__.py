@@ -3,6 +3,12 @@
 from .broker_gateway import BrokerConfirmation, BrokerGateway
 from .capital_demo_broker import CapitalDemoBroker
 from .config import AppConfig, ConfigManager
+from .credentials import (
+    DEFAULT_CREDENTIALS_PATH,
+    CredentialsError,
+    RuntimeCredentials,
+    load_credentials,
+)
 from .cycle_manager import (
     CycleManager,
     CycleStartError,
@@ -46,6 +52,7 @@ __all__ = [
     "BrokerGateway",
     "CapitalDemoBroker",
     "ConfigManager",
+    "CredentialsError",
     "Cycle",
     "CycleManager",
     "CycleStartError",
@@ -53,6 +60,7 @@ __all__ = [
     "EntryFilter",
     "EntryReadiness",
     "DeliveryFailure",
+    "DEFAULT_CREDENTIALS_PATH",
     "Event",
     "EventBus",
     "FormulaEngine",
@@ -75,6 +83,7 @@ __all__ = [
     "RecoveryManager",
     "RecoveryReport",
     "RuntimeController",
+    "RuntimeCredentials",
     "RuntimeStateError",
     "RuntimeStatus",
     "Position",
@@ -89,4 +98,5 @@ __all__ = [
     "TelegramTransportError",
     "TelegramUpdate",
     "Trigger",
+    "load_credentials",
 ]
