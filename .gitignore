@@ -7,3 +7,6 @@ dist/
 build/
 *.egg-info/
 .venv/
+# Local credentials must never be committed.
+secrets.json
+*.secrets.json

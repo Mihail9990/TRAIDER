@@ -20,7 +20,6 @@ from pathlib import Path, PurePosixPath
 
 
 DEFAULT_REPOSITORY = "Mihail9990/TRAIDER"
-# Install the canonical, merged release instead of a stale development branch.
 DEFAULT_REF = "main"
 
 
